@@ -6,8 +6,8 @@ const Footer: React.FC = () => {
         
         
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} AdInAI. All rights reserved.
+          <div className="mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            © {new Date().getFullYear()} Chatglo. All rights reserved.
           </p>
           
           <div className="flex gap-6">
