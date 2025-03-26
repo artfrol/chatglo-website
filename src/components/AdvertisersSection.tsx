@@ -130,6 +130,11 @@ const AdvertisersSection: React.FC = () => {
             size="lg" 
             className="text-lg px-8 py-6 shadow-lg interactive-btn"
           >
+          <a
+            href="https://form.typeform.com/to/RWtV5Kjl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Start AI Advertising Now
           </Button>
         </div>
