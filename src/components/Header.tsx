@@ -27,11 +27,7 @@ const Header: React.FC = () => {
         </nav>
         
         <div>
-          <Button size="sm" className="interactive-btn" onClick={() => document.getElementById('advertisers')?.scrollIntoView({
-          behavior: 'smooth'
-        })}>
-            Get Started
-          </Button>
+          
         </div>
       </div>
     </header>;
