@@ -13,9 +13,7 @@ const Header: React.FC = () => {
   return <header className={cn('fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 section-padding', scrolled ? 'glass' : 'bg-transparent')}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-            <span className="text-white font-bold text-xl">A</span>
-          </div>
+          
           <span className="font-semibold text-lg tracking-tight">Chatglo</span>
         </div>
         
