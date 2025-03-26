@@ -136,6 +136,7 @@ const AdvertisersSection: React.FC = () => {
             rel="noopener noreferrer"
           >
             Start AI Advertising Now
+            </a>
           </Button>
         </div>
       </div>
