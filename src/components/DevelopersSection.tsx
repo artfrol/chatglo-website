@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { BarChart3, DollarSign } from 'lucide-react';
+import { BarChart3, Code, DollarSign } from 'lucide-react';
 
 const DevelopersSection: React.FC = () => {
   useEffect(() => {
@@ -36,6 +36,11 @@ const DevelopersSection: React.FC = () => {
       icon: <BarChart3 className="h-6 w-6 text-primary" />,
       title: "Scale revenue without disrupting UX",
       description: "Our native integrations preserve your app's excellent user experience."
+    },
+    {
+      icon: <Code className="h-6 w-6 text-primary" />,
+      title: "One-line SDK integration",
+      description: "Simple implementation that takes minutes, not days."
     }
   ];
 
@@ -78,7 +83,7 @@ const DevelopersSection: React.FC = () => {
             Why work with us
           </h3>
           
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
               <Card 
                 key={index} 
