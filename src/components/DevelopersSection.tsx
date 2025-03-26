@@ -119,14 +119,20 @@ const DevelopersSection: React.FC = () => {
             ))}
           </div>
         </div>
-
         <div className="text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-700">
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             variant="outline"
             className="text-lg px-8 py-6 shadow-lg interactive-btn bg-white border-primary text-primary hover:bg-primary hover:text-white"
+            asChild
+          >
+          <a
+            href="https://form.typeform.com/to/f8J5dJNw"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Monetize my AI app
+          </a>
           </Button>
         </div>
       </div>
