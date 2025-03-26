@@ -37,18 +37,38 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="mt-12 flex flex-col md:flex-row gap-4 justify-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-500">
-          <Button size="lg" className={cn("text-lg px-8 py-6 shadow-lg interactive-btn", "bg-primary hover:bg-primary/90 text-white")} onClick={() => document.getElementById('advertisers')?.scrollIntoView({
-          behavior: 'smooth'
-        })}>
-            Start AI Advertising Now
-          </Button>
-          
-          <Button size="lg" variant="outline" className="text-lg px-8 py-6 shadow-lg interactive-btn border-primary text-primary hover:bg-primary hover:text-white" onClick={() => document.getElementById('developers')?.scrollIntoView({
-          behavior: 'smooth'
-        })}>
-            Monetize my AI app
-          </Button>
-        </div>
+  <Button
+    size="lg"
+    className={cn(
+      "text-lg px-8 py-6 shadow-lg interactive-btn",
+      "bg-primary hover:bg-primary/90 text-white"
+    )}
+    asChild
+  >
+    <a
+      href="https://form.typeform.com/to/RWtV5Kjl"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Start AI Advertising Now
+    </a>
+  </Button>
+
+  <Button
+    size="lg"
+    variant="outline"
+    className="text-lg px-8 py-6 shadow-lg interactive-btn border-primary text-primary hover:bg-primary hover:text-white"
+    asChild
+  >
+    <a
+      href="https://form.typeform.com/to/f8J5dJNw"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Monetize my AI app
+    </a>
+  </Button>
+</div>
       </div>
     </section>;
 };
