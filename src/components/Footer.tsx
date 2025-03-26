@@ -1,10 +1,7 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
-
 const Footer: React.FC = () => {
-  return (
-    <footer className="border-t border-border py-12 section-padding">
+  return <footer className="border-t border-border py-12 section-padding">
       <div className="max-w-7xl mx-auto">
         <div className="grid gap-8 grid-cols-1 md:grid-cols-4">
           <div className="space-y-4">
@@ -12,7 +9,7 @@ const Footer: React.FC = () => {
               <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
                 <span className="text-white font-bold text-xl">A</span>
               </div>
-              <span className="font-semibold text-lg tracking-tight">AdInAI</span>
+              <span className="font-semibold text-lg tracking-tight">Chatglo</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Connecting advertisers with AI users through native, non-intrusive integrations.
@@ -98,8 +95,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
