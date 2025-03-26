@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { RocketIcon } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const observerRef = useRef<HTMLDivElement>(null);
@@ -31,6 +32,10 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
+        <div className="flex justify-center mb-6 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
+          <RocketIcon className="h-16 w-16 text-primary" />
+        </div>
+        
         <div ref={observerRef} className="space-y-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
             Start advertising campaign in <span className="text-gradient">AI apps</span>
