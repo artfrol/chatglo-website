@@ -9,10 +9,11 @@ import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
-  website: z.string().url("Please enter a valid website URL").optional(),
+  website: z.string().url("Please enter a valid website URL").optional().or(z.literal('')),
   requestType: z.enum(["advertising", "monetization"])
 });
 
@@ -37,11 +38,32 @@ const Request = () => {
     form.setValue("requestType", mode === 'monetization' ? "monetization" : "advertising");
   }, [mode, form]);
 
+  // Animate elements when page loads
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100');
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   const onSubmit = (data: FormValues) => {
     console.log("Form submitted:", data);
     // Here you would typically send the data to your backend
-    // For now, let's just show a success message and redirect
-    alert("Thank you for your request! We'll review and get back to you soon.");
+    toast.success("Thank you for your request! We'll review and get back to you soon.");
     navigate('/');
   };
 
@@ -71,7 +93,7 @@ const Request = () => {
                         <FormControl>
                           <RadioGroup
                             onValueChange={field.onChange}
-                            defaultValue={field.value}
+                            value={field.value}
                             className="flex flex-col space-y-2"
                           >
                             <div className="flex items-center space-x-2">
