@@ -62,19 +62,20 @@ const Request = () => {
 
   const onSubmit = (data: FormValues) => {
     console.log("Form submitted:", data);
+    // Here you would typically send the data to your backend
     toast.success("Thank you for your request! We'll review and get back to you soon.");
     navigate('/');
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-blue-50">
+    <div className="min-h-screen flex flex-col">
       <main className="flex-1 flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-md space-y-8 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
           <div className="text-center">
-            <h1 className="text-3xl font-bold tracking-tight text-blue-800">
+            <h1 className="text-3xl font-bold tracking-tight">
               Get access to private beta
             </h1>
-            <p className="mt-3 text-blue-600">
+            <p className="mt-3 text-muted-foreground">
               Request access below. We'll review and send setup instructions upon approval.
             </p>
           </div>
@@ -83,7 +84,7 @@ const Request = () => {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <div className="space-y-4">
                 <div>
-                  <h3 className="text-lg font-medium mb-2 text-blue-700">I want to...</h3>
+                  <h3 className="text-lg font-medium mb-2">I want to...</h3>
                   <FormField
                     control={form.control}
                     name="requestType"
@@ -96,20 +97,12 @@ const Request = () => {
                             className="flex flex-col space-y-2"
                           >
                             <div className="flex items-center space-x-2">
-                              <RadioGroupItem 
-                                value="advertising" 
-                                id="advertising" 
-                                className="border-blue-500 data-[state=checked]:bg-blue-500" 
-                              />
-                              <Label htmlFor="advertising" className="text-blue-700">Start AI advertising</Label>
+                              <RadioGroupItem value="advertising" id="advertising" />
+                              <Label htmlFor="advertising">Start AI advertising</Label>
                             </div>
                             <div className="flex items-center space-x-2">
-                              <RadioGroupItem 
-                                value="monetization" 
-                                id="monetization" 
-                                className="border-blue-500 data-[state=checked]:bg-blue-500" 
-                              />
-                              <Label htmlFor="monetization" className="text-blue-700">Monetize my AI app</Label>
+                              <RadioGroupItem value="monetization" id="monetization" />
+                              <Label htmlFor="monetization">Monetize my AI app</Label>
                             </div>
                           </RadioGroup>
                         </FormControl>
@@ -124,13 +117,9 @@ const Request = () => {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-blue-700">Email</FormLabel>
+                      <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input 
-                          placeholder="your@email.com" 
-                          {...field} 
-                          className="border-blue-300 focus:border-blue-500 focus:ring-blue-500"
-                        />
+                        <Input placeholder="your@email.com" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -142,13 +131,9 @@ const Request = () => {
                   name="website"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-blue-700">Website (optional)</FormLabel>
+                      <FormLabel>Website (optional)</FormLabel>
                       <FormControl>
-                        <Input 
-                          placeholder="https://your-website.com" 
-                          {...field} 
-                          className="border-blue-300 focus:border-blue-500 focus:ring-blue-500"
-                        />
+                        <Input placeholder="https://your-website.com" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -158,7 +143,7 @@ const Request = () => {
 
               <Button 
                 type="submit"
-                className="w-full text-lg px-8 py-6 shadow-lg interactive-btn bg-blue-600 hover:bg-blue-700 text-white"
+                className="w-full text-lg px-8 py-6 shadow-lg interactive-btn"
               >
                 Request Access
               </Button>
