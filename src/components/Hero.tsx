@@ -1,6 +1,9 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
+
 const Hero: React.FC = () => {
   const observerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -45,13 +48,9 @@ const Hero: React.FC = () => {
     )}
     asChild
   >
-    <a
-      href="https://form.typeform.com/to/RWtV5Kjl"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <Link to="/request?mode=advertising">
       Start AI Advertising Now
-    </a>
+    </Link>
   </Button>
 
   <Button
@@ -60,13 +59,9 @@ const Hero: React.FC = () => {
     className="text-lg px-8 py-6 shadow-lg interactive-btn border-primary text-primary hover:bg-primary hover:text-white"
     asChild
   >
-    <a
-      href="https://form.typeform.com/to/f8J5dJNw"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <Link to="/request?mode=monetization">
       Monetize my AI app
-    </a>
+    </Link>
   </Button>
 </div>
       </div>

@@ -1,8 +1,8 @@
-
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { BadgeCheck, DollarSign, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const AdvertisersSection: React.FC = () => {
   useEffect(() => {
@@ -129,14 +129,11 @@ const AdvertisersSection: React.FC = () => {
           <Button 
             size="lg" 
             className="text-lg px-8 py-6 shadow-lg interactive-btn"
+            asChild
           >
-          <a
-            href="https://form.typeform.com/to/RWtV5Kjl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Start AI Advertising Now
-            </a>
+            <Link to="/request?mode=advertising">
+              Start AI Advertising Now
+            </Link>
           </Button>
         </div>
       </div>

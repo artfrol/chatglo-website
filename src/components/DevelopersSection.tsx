@@ -1,8 +1,8 @@
-
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { BarChart3, Code, DollarSign } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const DevelopersSection: React.FC = () => {
   useEffect(() => {
@@ -126,13 +126,9 @@ const DevelopersSection: React.FC = () => {
             className="text-lg px-8 py-6 shadow-lg interactive-btn bg-white border-primary text-primary hover:bg-primary hover:text-white"
             asChild
           >
-          <a
-            href="https://form.typeform.com/to/f8J5dJNw"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Monetize my AI app
-          </a>
+            <Link to="/request?mode=monetization">
+              Monetize my AI app
+            </Link>
           </Button>
         </div>
       </div>
