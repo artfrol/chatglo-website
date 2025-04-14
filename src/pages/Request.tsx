@@ -131,7 +131,7 @@ const Request = () => {
                   name="website"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Website (optional)</FormLabel>
+                      <FormLabel>Website</FormLabel>
                       <FormControl>
                         <Input placeholder="https://your-website.com" {...field} />
                       </FormControl>
